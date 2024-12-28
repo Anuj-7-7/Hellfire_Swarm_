@@ -206,24 +206,6 @@
     <div id="about" style="margin-top: 1rem" class="row">Hellfire_Swarm for ESP32 - waiting for a response from the ESP32
     </div>
 <script>
-    // Prompt for password
-const masterkey = prompt("Enter password:");
-
-// Predefined password
-const predefinedPassword = "hellfire";
-
-// Function to show the content if the password matches
-if (masterkey === predefinedPassword) {
-    // If the password is correct, display the page content
-    document.body.style.display = "block"; // Assuming the page is hidden by default
-} else {
-    // If the password is incorrect, show an error message and reload
-    alert("Incorrect password! Reloading...");
-    location.reload(); // Reload the page to prompt again
-}
-
-
-
     // get settings once upon page load
     while (get_system_info() < 0) {
     }
