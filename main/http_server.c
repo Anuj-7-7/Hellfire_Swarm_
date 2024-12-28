@@ -327,12 +327,12 @@ static esp_err_t settings_data_get_handler(httpd_req_t *req) {
     httpd_resp_set_type(req, "application/json");
     cJSON *root = cJSON_CreateObject();
     cJSON_AddNumberToObject(root, "esp32_mode", DB_WIFI_MODE);
-    cJSON_AddStringToObject(root, "wifi_ssid", (char *) DEFAULT_SSID);
-    cJSON_AddStringToObject(root, "wifi_pass", (char *) DEFAULT_PWD);
+    cJSON_AddStringToObject(root, "wifi_ssid","");
+    cJSON_AddStringToObject(root, "wifi_pass","");
     cJSON_AddNumberToObject(root, "ap_channel", DEFAULT_CHANNEL);
     cJSON_AddNumberToObject(root, "trans_pack_size", TRANSPARENT_BUF_SIZE);
-    cJSON_AddNumberToObject(root, "tx_pin", DB_UART_PIN_TX);
-    cJSON_AddNumberToObject(root, "rx_pin", DB_UART_PIN_RX);
+    cJSON_AddNumberToObject(root, "tx_pin","");
+    cJSON_AddNumberToObject(root, "rx_pin", "");
     cJSON_AddNumberToObject(root, "cts_pin", DB_UART_PIN_CTS);
     cJSON_AddNumberToObject(root, "rts_pin", DB_UART_PIN_RTS);
     cJSON_AddNumberToObject(root, "rts_thresh", DB_UART_RTS_THRESH);
