@@ -331,8 +331,8 @@ static esp_err_t settings_data_get_handler(httpd_req_t *req) {
     cJSON_AddStringToObject(root, "wifi_pass","");
     cJSON_AddNumberToObject(root, "ap_channel", DEFAULT_CHANNEL);
     cJSON_AddNumberToObject(root, "trans_pack_size", TRANSPARENT_BUF_SIZE);
-    cJSON_AddNumberToObject(root, "tx_pin","");
-    cJSON_AddNumberToObject(root, "rx_pin", "");
+    cJSON_AddNumberToObject(root, "tx_pin", 0);
+    cJSON_AddNumberToObject(root, "rx_pin", 0);
     cJSON_AddNumberToObject(root, "cts_pin", DB_UART_PIN_CTS);
     cJSON_AddNumberToObject(root, "rts_pin", DB_UART_PIN_RTS);
     cJSON_AddNumberToObject(root, "rts_thresh", DB_UART_RTS_THRESH);
