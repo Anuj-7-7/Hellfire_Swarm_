@@ -340,7 +340,7 @@ static esp_err_t settings_data_get_handler(httpd_req_t *req) {
     cJSON_AddNumberToObject(root, "telem_proto", SERIAL_PROTOCOL);
     cJSON_AddNumberToObject(root, "ltm_pp", LTM_FRAME_NUM_BUFFER);
     cJSON_AddNumberToObject(root, "msp_ltm_port", MSP_LTM_SAMEPORT);
-    cJSON_AddStringToObject(root, "ap_ip", DEFAULT_AP_IP);
+    cJSON_AddStringToObject(root, "ap_ip", 0);
     const char *sys_info = cJSON_Print(root);
     httpd_resp_sendstr(req, sys_info);
     free((void *) sys_info);
