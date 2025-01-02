@@ -6,10 +6,6 @@
     <meta name="author" content="Wolfgang Christl">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Confriguation settings for ESP32 </title>
-    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <meta name="theme-color" content="#3166FF">
     <style>
         /*
@@ -103,9 +99,10 @@
                     <input type="text" name="wifi_ssid" id="wifi_ssid" value="">
                 </div>
                 <div class="six columns">
-                    <label for="wifi_pass">Password</label>
-                    <input type="text" name="wifi_pass" id="wifi_pass" value="">
-                </div>
+    <label for="wifi_pass">Password</label>
+    <input type="text" name="wifi_pass" id="wifi_pass" value="" class="passs">
+    <small id="password-error" style="color: rgb(255, 0, 0); display: none;">Password must be at least 8 characters long.</small>
+</div>
             </div>
             <div class="row" style="display: none;">
                 <div id="ap_channel_div" class="twelve columns">
@@ -217,6 +214,21 @@
     setTimeout(change_msp_ltm_visibility, 500)
     setTimeout(change_ap_ip_visibility, 500)   
   
+
+    document.getElementById("wifi_pass").addEventListener("input", function () {
+        const passwordField = document.getElementById("wifi_pass");
+        const errorMessage = document.getElementById("password-error");
+
+        if (passwordField.value.length < 8) {
+            // Show the error message
+            errorMessage.style.display = "block";
+        } else {
+            // Hide the error message
+            errorMessage.style.display = "none";
+        }
+    });
+
+    
     function save_settings() {
     // Prompt the user for a password
     const enteredPassword = prompt("Enter password to save settings:");
